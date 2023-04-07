@@ -28,6 +28,9 @@ numBtns.forEach((key) => {
         if (value == 'clear') {
             display.textContent = '';
             result.textContent = '';
+            lastValue = '';
+            a = '';
+            b = '';
             addChecked = false;
             minusChecked = false;
             multiplyChecked = false;
@@ -103,6 +106,9 @@ function addNums(num1, num2) {
     output = parseFloat(num1) + parseFloat(num2);
     lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    if(result.textContent.length > 7) {
+        result.style.fontSize = '32px';
+    }
 }
 
 // Subtraction function
@@ -110,6 +116,9 @@ function subtractNums(num1, num2) {
     output = parseFloat(num1) - parseFloat(num2);
     lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    if(result.textContent.length > 7) {
+        result.style.fontSize = '32px';
+    }
 }
     
 // Multiplication function
@@ -117,11 +126,21 @@ function multiplyNums(num1, num2) {
     output = parseFloat(num1) * parseFloat(num2);
     lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+    if(result.textContent.length > 7) {
+        result.style.fontSize = '32px';
+    }
 }
         
 // Divide function
 function divideNums(num1, num2) {
     output = parseFloat(num1) / parseFloat(num2);
+    if (parseFloat(num1) == 0 || parseFloat(num2) == 0) {
+        result.textContent = `Oh that's cute. You tried dividing by 0.`;
+        if(result.textContent.length > 7) {
+            result.style.fontSize = '16px';
+        }
+        return;
+    }
     lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
@@ -133,15 +152,4 @@ function remainder(num1, num2) {
 }
 
 // handles large ouputs
-if (result.textContent.length >= 7) {
-    result.style.fontSize = '32px';
-    if (result.textContent.length >= 12) {
-        result.style.fontSize = '24px';
-        if (result.textContent.length > 15) {
-            result.style.fontSize = '12px';
-        }
-    }
-} else {
-    result.style.fontSize = '48px';
-}
             
