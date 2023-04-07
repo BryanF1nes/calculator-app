@@ -2,12 +2,30 @@ const result = document.querySelector('#result');
 const equation = document.querySelector('#equation');
 const numBtns = document.querySelectorAll('#numKeys');
 
+
 let a;
 let b;
+
+let input = '';
 let output;
 
 numBtns.forEach((key) => {
     key.addEventListener('click', () => {
+        const values = key.dataset.key;
+        if (key.textContent === 'AC') {
+            input = '';
+            equation.textContent = input;
+        } else if (values == '+') {
+            input = '+'
+            console.log(input);
+        } else {
+            value = key.textContent;
+            input += value;
+            equation.textContent = input;
+        }
+        
+
+
         // sets an animation class
         key.classList.add('click')
         // removes an animation class
@@ -16,9 +34,7 @@ numBtns.forEach((key) => {
         }, 250);
 
         // gets inputed values on screen
-        let value = parseInt(key.textContent);
-        equation.textContent = value;
-        console.log(value)
+        
     });
 });
 
