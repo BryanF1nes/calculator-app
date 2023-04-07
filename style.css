@@ -33,7 +33,7 @@ body {
     height: 170px;
     width: 330px;
     position: relative;
-    border-radius: 15px;
+    border-radius: 15px 15px 0px 0px;
     top: -5px;
     display: flex;
     flex-direction: column;

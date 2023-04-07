@@ -1,31 +1,16 @@
+// get input and store it as num1
+// get second input and stare as num2
+// check to see if a "operator" key was pressed
+// check to see if = was pressed
+// if = was pressed run equation based off the "operator" value
+// return the result
+
 const result = document.querySelector('#result');
-const equation = document.querySelector('#equation');
+const display = document.querySelector('#equation');
 const numBtns = document.querySelectorAll('#numKeys');
-
-
-let a;
-let b;
-
-let input = '';
-let output;
 
 numBtns.forEach((key) => {
     key.addEventListener('click', () => {
-        const values = key.dataset.key;
-        if (key.textContent === 'AC') {
-            input = '';
-            equation.textContent = input;
-        } else if (values == '+') {
-            input = '+'
-            console.log(input);
-        } else {
-            value = key.textContent;
-            input += value;
-            equation.textContent = input;
-        }
-        
-
-
         // sets an animation class
         key.classList.add('click')
         // removes an animation class
@@ -34,7 +19,12 @@ numBtns.forEach((key) => {
         }, 250);
 
         // gets inputed values on screen
-        
+        const value = key.dataset.key;
+        if (value == 'clear') {
+            display.textContent = '';
+        } else {
+            display.textContent += value;
+        }
     });
 });
 
@@ -49,37 +39,33 @@ if (result.textContent.length >= 7) {
 }
 
 // Addition function
-function addNums(num1, num2) {
-    a = num1;
-    b = num2;
-
-    output = a + b;
-    console.log(output);
+function addNums(a, b) {
+    a + b;
 }
 
-// Subtraction function
-function subtractNums(num1, num2) {
-    a = num1;
-    b = num2;
+// // Subtraction function
+// function subtractNums(num1, num2) {
+//     a = num1;
+//     b = num2;
 
-    output = a - b;
-    console.log(ouput);
-}
+//     output = a - b;
+//     console.log(ouput);
+// }
 
-// Multiplication function
-function multiplyNums(num1, num2) {
-    a = num1;
-    b = num2;
+// // Multiplication function
+// function multiplyNums(num1, num2) {
+//     a = num1;
+//     b = num2;
 
-    output = a * b;
-    console.log(ouput);
-}
+//     output = a * b;
+//     console.log(ouput);
+// }
 
-// Divide function
-function multiplyNums(num1, num2) {
-    a = num1;
-    b = num2;
+// // Divide function
+// function multiplyNums(num1, num2) {
+//     a = num1;
+//     b = num2;
 
-    output = a / b;
-    console.log(ouput);
-}
+//     output = a / b;
+//     console.log(ouput);
+// }
