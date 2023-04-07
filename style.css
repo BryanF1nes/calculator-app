@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    height: 100vh;
+    background-color: rgb(56, 13, 56);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(35, 29, 49);
+    width: 350px;
+    height: 600px;
+    border-radius: 20px;
+    position: absolute;
+    -webkit-box-shadow: 7px 7px 13px -3px rgba(0,0,0,0.7);
+    -moz-box-shadow: 7px 7px 13px -3px rgba(0,0,0,0.7);
+    box-shadow: 7px 7px 13px -3px rgba(0,0,0,0.7);
+}
+
+.upper {
+    background-color:rgb(23, 21, 29);
+    height: 170px;
+    width: 330px;
+    position: relative;
+    border-radius: 15px;
+    top: -5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.upper p {
+    font-size: 28px;
+    font-weight: 300;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    opacity: 50%;
+}
+
+.upper h2 {
+    font-size: 60px;
+    font-weight: 400;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.lower {
+    position: relative;
+    top: 5px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.clearkey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(41, 39, 50);
+    color:rgb(121, 50, 121);
+    font-size: 18px;
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.divisionkey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(39, 37, 49);
+    margin: 5px;
+    color:rgb(121, 50, 121);
+    font-size: 18px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.multiplykey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(39, 37, 49);
+    margin: 5px;
+    color:rgb(121, 50, 121);
+    font-size: 18px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.backspacekey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(141, 78, 148);
+    font-size: 18px;
+    margin: 5px;
+    font-size: 18px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.minuskey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(141, 78, 148);
+    font-size: 18px;
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.addkey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(141, 78, 148);
+    font-size: 18px;
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.numkeys {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(39, 37, 49);
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.totalkey {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 70px;
+    background-color:rgb(141, 78, 148);
+    font-size: 18px;
+    margin: 5px;
+    grid-column: 4;
+    grid-row: 4 / 6;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.decimal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(39, 37, 49);
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.remainder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    width: 70px;
+    background-color:rgb(39, 37, 49);
+    margin: 5px;
+    transition: transform 400ms ease-in;
+    cursor: pointer;
+}
+
+.click {
+    -webkit-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.7);
+    -moz-box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.7);
+    box-shadow: 0px 0px 18px 2px rgba(0,0,0,0.7);
+    transform: scale(0.9);
+}
