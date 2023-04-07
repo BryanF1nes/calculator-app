@@ -5,6 +5,7 @@ const numBtns = document.querySelectorAll('#numKeys');
 let a = '';
 let b = '';
 let output = '';
+let lastValue = '';
 
 let addChecked = false;
 let minusChecked = false;
@@ -37,26 +38,41 @@ numBtns.forEach((key) => {
             a = display.textContent;
             addChecked = true;
             display.textContent = '';
+            if (lastValue !== '') {
+                a = lastValue;
+            }
         } 
         else if (value == '-') {
             a = display.textContent;
             minusChecked = true;
             display.textContent = '';
+            if (lastValue !== '') {
+                a = lastValue;
+            }
         }
         else if (value == '*') {
             a = display.textContent;
             multiplyChecked = true;
             display.textContent = '';
+            if (lastValue !== '') {
+                a = lastValue;
+            }
         }
         else if (value == '/') {
             a = display.textContent;
             divideChecked = true;
             display.textContent = '';
+            if (lastValue !== '') {
+                a = lastValue;
+            }
         }
         else if (value == '%') {
             a = display.textContent;
             remainderChecked = true;
             display.textContent = '';
+            if (lastValue !== '') {
+                a = lastValue;
+            }
         }
         else if (value == '=') {
             b = display.textContent;
@@ -85,29 +101,34 @@ numBtns.forEach((key) => {
 // Addition function
 function addNums(num1, num2) {
     output = parseFloat(num1) + parseFloat(num2);
+    lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
 
 // Subtraction function
 function subtractNums(num1, num2) {
     output = parseFloat(num1) - parseFloat(num2);
+    lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
     
 // Multiplication function
 function multiplyNums(num1, num2) {
     output = parseFloat(num1) * parseFloat(num2);
+    lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
         
 // Divide function
 function divideNums(num1, num2) {
     output = parseFloat(num1) / parseFloat(num2);
+    lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
 
 function remainder(num1, num2) {
     output = parseFloat(num1) % parseFloat(num2);
+    lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
 }
 
