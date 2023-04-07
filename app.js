@@ -106,8 +106,10 @@ function addNums(num1, num2) {
     output = parseFloat(num1) + parseFloat(num2);
     lastValue = output;
     result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
-    if(result.textContent.length > 7) {
+    if(result.textContent.length >= 7) {
         result.style.fontSize = '32px';
+    } else {
+        result.style.fontSize = '48px';
     }
 }
 
