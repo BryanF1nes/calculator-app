@@ -6,7 +6,8 @@
 body {
     font-family: 'Rubik', sans-serif;
     height: 100vh;
-    background-color: rgb(56, 13, 56);
+    background: rgb(56,13,56);
+    background: linear-gradient(45deg, rgba(56,13,56,1) 0%, rgba(102,30,102,1) 100%);
     color: white;
     display: flex;
     align-items: center;

@@ -1,13 +1,16 @@
-// get input and store it as num1
-// get second input and stare as num2
-// check to see if a "operator" key was pressed
-// check to see if = was pressed
-// if = was pressed run equation based off the "operator" value
-// return the result
-
 const result = document.querySelector('#result');
 const display = document.querySelector('#equation');
 const numBtns = document.querySelectorAll('#numKeys');
+
+let a = '';
+let b = '';
+let output = '';
+
+let addChecked = false;
+let minusChecked = false;
+let multiplyChecked = false;
+let divideChecked = false;
+let remainderChecked = false;
 
 numBtns.forEach((key) => {
     key.addEventListener('click', () => {
@@ -20,52 +23,104 @@ numBtns.forEach((key) => {
 
         // gets inputed values on screen
         const value = key.dataset.key;
+
         if (value == 'clear') {
             display.textContent = '';
+            result.textContent = '';
+            addChecked = false;
+            minusChecked = false;
+            multiplyChecked = false;
+            divideChecked = false;
+            remainderChecked = false;
+        }
+        else if (value == '+') {
+            a = display.textContent;
+            addChecked = true;
+            display.textContent = '';
+        } 
+        else if (value == '-') {
+            a = display.textContent;
+            minusChecked = true;
+            display.textContent = '';
+        }
+        else if (value == '*') {
+            a = display.textContent;
+            multiplyChecked = true;
+            display.textContent = '';
+        }
+        else if (value == '/') {
+            a = display.textContent;
+            divideChecked = true;
+            display.textContent = '';
+        }
+        else if (value == '%') {
+            a = display.textContent;
+            remainderChecked = true;
+            display.textContent = '';
+        }
+        else if (value == '=') {
+            b = display.textContent;
+            if (addChecked = true && minusChecked === false && divideChecked === false && multiplyChecked === false) {
+                addNums(a, b);
+                addChecked = false;
+            }
+            else if (minusChecked = true && addChecked === false && divideChecked === false && multiplyChecked === false) {
+                subtractNums(a, b);
+                minusChecked = false;
+            }
+            else if (multiplyChecked = true && minusChecked === false && divideChecked === false && addChecked === false) {
+                multiplyNums(a, b);
+                multiplyChecked = false;
+            }
+            else if (divideChecked = true && minusChecked === false && addChecked === false && multiplyChecked === false) {
+                divideNums(a, b);
+                divideChecked = false;
+            }
         } else {
             display.textContent += value;
         }
     });
 });
 
+// Addition function
+function addNums(num1, num2) {
+    output = parseFloat(num1) + parseFloat(num2);
+    result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+
+// Subtraction function
+function subtractNums(num1, num2) {
+    output = parseFloat(num1) - parseFloat(num2);
+    result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+    
+// Multiplication function
+function multiplyNums(num1, num2) {
+    output = parseFloat(num1) * parseFloat(num2);
+    result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+        
+// Divide function
+function divideNums(num1, num2) {
+    output = parseFloat(num1) / parseFloat(num2);
+    result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+
+function remainder(num1, num2) {
+    output = parseFloat(num1) % parseFloat(num2);
+    result.textContent = output.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,');
+}
+
 // handles large ouputs
 if (result.textContent.length >= 7) {
     result.style.fontSize = '32px';
-    if(result.textContent.length >= 15) {
+    if (result.textContent.length >= 12) {
         result.style.fontSize = '24px';
+        if (result.textContent.length > 15) {
+            result.style.fontSize = '12px';
+        }
     }
 } else {
     result.style.fontSize = '48px';
 }
-
-// Addition function
-function addNums(a, b) {
-    a + b;
-}
-
-// // Subtraction function
-// function subtractNums(num1, num2) {
-//     a = num1;
-//     b = num2;
-
-//     output = a - b;
-//     console.log(ouput);
-// }
-
-// // Multiplication function
-// function multiplyNums(num1, num2) {
-//     a = num1;
-//     b = num2;
-
-//     output = a * b;
-//     console.log(ouput);
-// }
-
-// // Divide function
-// function multiplyNums(num1, num2) {
-//     a = num1;
-//     b = num2;
-
-//     output = a / b;
-//     console.log(ouput);
-// }
+            
