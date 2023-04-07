@@ -50,7 +50,7 @@ body {
 }
 
 .upper h2 {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 400;
     padding-right: 20px;
     padding-bottom: 10px;
@@ -74,8 +74,12 @@ body {
     color:rgb(121, 50, 121);
     font-size: 18px;
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.clearkey:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .divisionkey {
@@ -88,8 +92,12 @@ body {
     margin: 5px;
     color:rgb(121, 50, 121);
     font-size: 18px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.divisionkey:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .multiplykey {
@@ -102,8 +110,12 @@ body {
     margin: 5px;
     color:rgb(121, 50, 121);
     font-size: 18px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.multiplykey:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .backspacekey {
@@ -116,8 +128,12 @@ body {
     font-size: 18px;
     margin: 5px;
     font-size: 18px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.backspacekey:hover {
+    background-color: rgb(153, 84, 160);
 }
 
 .minuskey {
@@ -129,8 +145,12 @@ body {
     background-color:rgb(141, 78, 148);
     font-size: 18px;
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.minuskey:hover {
+    background-color: rgb(153, 84, 160);
 }
 
 .addkey {
@@ -142,8 +162,12 @@ body {
     background-color:rgb(141, 78, 148);
     font-size: 18px;
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.addkey:hover {
+    background-color: rgb(153, 84, 160);
 }
 
 .numkeys {
@@ -154,8 +178,12 @@ body {
     width: 70px;
     background-color:rgb(39, 37, 49);
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.numkeys:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .totalkey {
@@ -169,8 +197,12 @@ body {
     margin: 5px;
     grid-column: 4;
     grid-row: 4 / 6;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.totalkey:hover {
+    background-color: rgb(153, 84, 160);
 }
 
 .decimal {
@@ -181,8 +213,12 @@ body {
     width: 70px;
     background-color:rgb(39, 37, 49);
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.decimal:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .remainder {
@@ -193,8 +229,12 @@ body {
     width: 70px;
     background-color:rgb(39, 37, 49);
     margin: 5px;
-    transition: transform 400ms ease-in;
+    transition: transform 200ms ease-in;
     cursor: pointer;
+}
+
+.remainder:hover {
+    background-color: rgb(51, 48, 63);
 }
 
 .click {
