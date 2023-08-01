@@ -37,6 +37,13 @@ numBtns.forEach((key) => {
             divideChecked = false;
             remainderChecked = false;
         }
+        else if (value === 'back') {
+            display.textContent = '';
+            result.textContent = '';
+            lastValue = '';
+            a = '';
+            b = '';
+        }  
         else if (value == '+') {
             a = display.textContent;
             addChecked = true;
